@@ -1,0 +1,7 @@
+Flask==1.1.2
+SQLAlchemy==1.3.18
+pg8000==1.16.0
+google-cloud-storage>=1.14
+google-cloud-logging>=1.15.0
+flask_google_cloud_logger>=0.2.1
+python-dateutil>=2.8.1

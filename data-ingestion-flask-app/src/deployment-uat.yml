@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpl-uat-data-load-deployment-as1
+  labels:
+    app: alpl-uat-data-load-as1
+    label-key: alpl-uat-data-load-pod
+spec:
+  selector:
+    matchLabels:
+      app: alpl-uat-data-load-as1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: alpl-uat-data-load-as1
+        label-key: alpl-uat-data-load-template
+    spec:
+      containers:
+        - name: alpl-uat-data-load-as1
+          image: gcr.io/arunachala-hcc-030919/alpl-uat-data-ingestion-cr:v3
+          ports:
+            - containerPort: 8989
